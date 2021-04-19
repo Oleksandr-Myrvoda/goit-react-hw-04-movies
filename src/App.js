@@ -1,0 +1,32 @@
+import React, { Component, Suspense } from "react";
+import { Switch, Route } from "react-router-dom";
+
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import MoviesPage from "./pages/MoviesPage";
+import MoviesDetailsPage from "./pages/MovieDetailsPage";
+import NotFound from "./pages/NotFound";
+
+import routes from "./routes/mainRoutes";
+import styles from "./App.module.css";
+import "./App.css";
+
+export default class App extends Component {
+  render() {
+    return (
+      <>
+        <Header />
+        <div className={styles.app}>
+          <Suspense fallback={<h1>Loadind...</h1>}>
+            <Switch>
+              <Route path={routes.home} exact component={HomePage} />
+              <Route path={routes.movieDetails} component={MoviesDetailsPage} />
+              <Route path={routes.movies} component={MoviesPage} />
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
+        </div>
+      </>
+    );
+  }
+}
