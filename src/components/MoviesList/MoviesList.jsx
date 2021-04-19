@@ -1,7 +1,8 @@
 import React from "react";
-
 import { NavLink, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import routes from "../../routes/mainRoutes";
+
 import styles from "./MoviesList.module.css";
 
 const MoviesList = ({ movies, location }) => {
@@ -12,9 +13,8 @@ const MoviesList = ({ movies, location }) => {
           <li key={id}>
             <NavLink
               to={{
-                pathname: `/movies/${id}`,
-
-                state: { from: location },
+                pathname: `${routes.movies}/${id}`,
+                state: location,
               }}
             >
               <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} width="100" alt={title} />

@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
@@ -22,6 +22,7 @@ export default class App extends Component {
               <Route path={routes.home} exact component={HomePage} />
               <Route path={routes.movieDetails} component={MoviesDetailsPage} />
               <Route path={routes.movies} component={MoviesPage} />
+              <Redirect to={routes.home} />
               <Route component={NotFound} />
             </Switch>
           </Suspense>

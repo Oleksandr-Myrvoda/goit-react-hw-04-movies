@@ -22,7 +22,6 @@ class MoviesDetailsPage extends Component {
     const response = await apiService.movieDetails(movieId);
 
     this.setState({ ...response });
-    // console.log(response);
   }
 
   handleGoBack = () => {
@@ -35,7 +34,7 @@ class MoviesDetailsPage extends Component {
     const { match, location } = this.props;
 
     return (
-      <section className={styles.overlay}>
+      <section>
         <button className={styles.button} type="button" onClick={this.handleGoBack}>
           Go back
         </button>

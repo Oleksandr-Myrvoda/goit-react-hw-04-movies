@@ -7,6 +7,7 @@ class HomePage extends Component {
   state = {
     movies: [],
   };
+
   async componentDidMount() {
     try {
       const response = await apiService.getTrendingMovies();
@@ -14,7 +15,6 @@ class HomePage extends Component {
     } catch (error) {
       console.log(error);
     }
-    // console.log(response);
   }
 
   render() {

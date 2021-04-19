@@ -5,24 +5,18 @@ const API_KEY = "1db5479ca98fac1ae129bcbe15cc6182";
 
 export const getTrendingMovies = () =>
   axios
-    // .get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`)
-    // .then(({ data }) => data.results.map(({ title, id, poster_path }) => ({ title, id, poster_path })))
     .get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`)
     .then(({ data }) => data.results)
     .catch((error) => error);
 
 export const search = (searchQuery = "batman") =>
   axios
-    // .get(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`)
-    // .then(({ data }) => data.results.map(({ title, id, poster_path }) => ({ title, id, poster_path })))
     .get(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}`)
     .then(({ data }) => data.results)
     .catch((error) => error);
 
 export const movieDetails = (movieId) =>
   axios
-    // .get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`)
-    // .then(({ data }) => ({ title: data.title, id: data.id, poster_path: data.poster_path }))
     .get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`)
     .then(({ data }) => data)
     .catch((error) => error);

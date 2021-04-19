@@ -23,9 +23,7 @@
 .button:hover {
   background-color: #303f9f;
 }
-/* .overlay {
-  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
-} */
+
 .movieCard {
   display: flex;
 }

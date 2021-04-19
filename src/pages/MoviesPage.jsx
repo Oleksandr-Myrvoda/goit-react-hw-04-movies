@@ -43,7 +43,6 @@ class MoviesPage extends Component {
     const { movies } = this.state;
     return (
       <>
-        <h1>MoviesPage</h1>
         <Searchbar onSubmit={this.handleSearch} />
         {movies.length > 0 && <MoviesList movies={movies} />}
       </>
